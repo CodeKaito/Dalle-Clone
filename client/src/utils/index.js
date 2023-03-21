@@ -4,5 +4,7 @@ export function getRandomPrompt(prompt) {
     const randomIndex = Math.floor(Math.random() * surpriseMePrompts.lenght);
     const randomPrompt = surpriseMePrompts[randomIndex];
 
-    return randomPrompt
+    if(randomPrompt === prompt ) return getRandomPrompt(prompt);
+
+    return randomPrompt;
 }
