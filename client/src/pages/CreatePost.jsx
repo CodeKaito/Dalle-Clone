@@ -16,19 +16,18 @@ const CreatePost = () => {
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSurpriseMe = () => {
+    const randomPrompt = getRandomPrompt(form.prompt);
+    setForm({ ...form, prompt: randomPrompt });
+  };
+
   const generateImg = () => {
 
   }
 
   const handleSubmit = () => {
-
-  }
-
-  const handleChange = (e) => {
-
-  }
-
-  const handleSupriseMe = () => {
 
   }
 
@@ -42,7 +41,7 @@ const CreatePost = () => {
         <form className='mt-16 max-w-3xl' onSubmit={handleSubmit}>
           <div className='flex flex-col gap-5'>
             <FormField labelName='Your name' text='text' name='name' placeholder='John Doe' value={form.name} handleChange={handleChange} />
-            <FormField labelName='Prompt' text='text' name='prompt' placeholder='A futuristic cyborg dance club, neon lights' value={form.prompt} handleChange={handleChange} isSurpriseMe handleSupriseMe={handleSupriseMe} />
+            <FormField labelName='Prompt' text='text' name='prompt' placeholder='A futuristic cyborg dance club, neon lights...' value={form.prompt} handleChange={handleChange} isSurpriseMe handleSurpriseMe={handleSurpriseMe} />
           
             <div className='relative bg-gray-50 border border-gray-4300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center'>
               {form.photo ? (
