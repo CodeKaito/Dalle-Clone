@@ -6,6 +6,8 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
     const [allPosts, setAllPosts] = useState(null);
 
+    const [search, searchText] = useState('abc');
+
   return (
     <section className='max-w-7xl mx-auto'>
         <div>
@@ -25,7 +27,9 @@ const Home = () => {
             </div>
             ) : (
                 <>
-                
+                 {searchText && (
+                    <h2 className='font-medium text-[#666E75] text-xl mb-3'>Showing results for <span className='text-[#222328]'>{searchText}</span></h2>
+                 )}
                 </>
             )}
         </div>
