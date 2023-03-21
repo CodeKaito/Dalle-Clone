@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react'
 import { Loader, Card, FormField } from '../components'
 
 const Home = () => {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [allPosts, setAllPosts] = useState(null);
 
-    const [search, searchText] = useState('abc');
+    const [searchText, setSearchText] = useState('abc');
 
   return (
     <section className='max-w-7xl mx-auto'>
